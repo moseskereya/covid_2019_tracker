@@ -41,6 +41,14 @@ display: flex;
  background-color: #4f5053;
  width: 100%;
 }
+.cases,
+.deaths,
+.recovered{
+    font-size: 14px;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    font-style: oblique;
+    margin-top: 5px;
+}
 @media screen and (max-width: 990px){
     .app{
     flex-direction: column;

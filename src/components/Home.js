@@ -5,6 +5,7 @@ import Table from './Table'
 import Map from "./Map"
 import "leaflet/dist/leaflet.css"
 import Footer from "./Footer"
+import {formatnumbers} from './util';
 function Home () {
     const [countries, setCountries] = useState([]);
     const [country, setCountry] = useState("worldwide");
@@ -73,13 +74,17 @@ function Home () {
             <div className="app__stats">
                 <InfoBox 
                 title="CASES" 
-                cases={countryInfo.todayCases}
-                total={countryInfo.cases} className="cases"/>
+                cases={formatnumbers(countryInfo.todayCases)}
+                total={formatnumbers(countryInfo.cases)} 
+                className="cases"/>
                   <InfoBox title="RECOVERED" 
-                  cases={countryInfo.todayRecovered}  total={countryInfo.recovered} className="recovered"/>
+                  cases={formatnumbers(countryInfo.todayRecovered)}  
+                  total={formatnumbers(countryInfo.recovered)} 
+                  className="recovered"/>
                 <InfoBox title="DEATHS" 
-                cases={countryInfo.todayDeaths}  
-              total={countryInfo.deaths} className="deaths"/>
+                cases={formatnumbers(countryInfo.todayDeaths)}  
+              total={formatnumbers(countryInfo.deaths)} 
+              className="deaths"/>
             </div>
             <Map 
             countries={mapCountries} 

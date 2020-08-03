@@ -17,6 +17,8 @@ const casesTypeColors = {
     },
 };
 
+export const formatnumbers = (number) =>  number ? `+${numeral(number).format("0,0a")}` : "+0";
+
 export const dataOnMap = (data, casesType = 'cases') => (
     data.map(country => ( 
          <Circle center={[country.countryInfo.lat, country.countryInfo.long]}
